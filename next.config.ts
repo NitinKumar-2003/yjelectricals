@@ -5,19 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "home.iitd.ac.in",
-      },
-      {
-        protocol: "https",
-        hostname: "cache.careers360.mobi",
-      },
-      {
-        protocol: "https",
-        hostname: "static.toiimg.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.shiksha.com",
+        hostname: "yjelectricals.com",
       },
     ],
   },
