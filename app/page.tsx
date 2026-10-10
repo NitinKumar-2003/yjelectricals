@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, Zap } from "lucide-react";
+import Image from "next/image";
 
 /* ─────────────────────────────────────────
    Floating particles
@@ -157,30 +158,37 @@ export default function ComingSoonPage() {
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 120, damping: 14, delay: 0.1 }}
         >
-          <div
-            style={{
-              width: 80,
-              height: 80,
-              borderRadius: 20,
-              background: "linear-gradient(135deg,#c62828 0%,#7f0000 100%)",
-              boxShadow: "0 0 40px rgba(198,40,40,0.45), 0 0 80px rgba(198,40,40,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Zap style={{ width: 40, height: 40, color: "#fff" }} strokeWidth={2.5} />
-          </div>
+          {/* pulse ring */}
           <motion.div
             style={{
               position: "absolute",
-              inset: 0,
-              borderRadius: 20,
+              inset: -4,
+              borderRadius: "50%",
               border: "2px solid #c62828",
             }}
-            animate={{ scale: [1, 1.55, 1], opacity: [0.7, 0, 0.7] }}
+            animate={{ scale: [1, 1.45, 1], opacity: [0.7, 0, 0.7] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }}
           />
+          {/* logo circle */}
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: "50%",
+              overflow: "hidden",
+              boxShadow:
+                "0 0 0 2px rgba(198,40,40,0.4), 0 0 40px rgba(198,40,40,0.35), 0 0 80px rgba(198,40,40,0.12)",
+            }}
+          >
+            <Image
+              src="/favicon.png"
+              alt="Y. J. Electricals logo"
+              width={100}
+              height={100}
+              priority
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
         </motion.div>
 
         {/* brand */}
