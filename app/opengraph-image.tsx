@@ -6,7 +6,6 @@ export const alt = "Y. J. Electricals — Coming Soon";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Read the favicon once at module scope (statically optimised at build time)
 const faviconData = await readFile(
   join(process.cwd(), "public", "favicon.png"),
   "base64"
@@ -30,9 +29,10 @@ export default function Image() {
           overflow: "hidden",
         }}
       >
-        {/* ── grid lines ── */}
+        {/* grid */}
         <div
           style={{
+            display: "flex",
             position: "absolute",
             inset: 0,
             backgroundImage:
@@ -41,9 +41,10 @@ export default function Image() {
           }}
         />
 
-        {/* ── center radial glow ── */}
+        {/* center glow */}
         <div
           style={{
+            display: "flex",
             position: "absolute",
             inset: 0,
             background:
@@ -51,9 +52,10 @@ export default function Image() {
           }}
         />
 
-        {/* ── decorative ring ── */}
+        {/* inner ring */}
         <div
           style={{
+            display: "flex",
             position: "absolute",
             width: 520,
             height: 520,
@@ -64,42 +66,44 @@ export default function Image() {
             transform: "translate(-50%, -50%)",
           }}
         />
+
+        {/* outer ring */}
         <div
           style={{
+            display: "flex",
             position: "absolute",
-            width: 720,
-            height: 720,
+            width: 740,
+            height: 740,
             borderRadius: "50%",
-            border: "1px solid rgba(198,40,40,0.08)",
+            border: "1px solid rgba(198,40,40,0.07)",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
         />
 
-        {/* ── content ── */}
+        {/* content column */}
         <div
           style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 0,
           }}
         >
-          {/* logo icon */}
+          {/* logo */}
           <div
             style={{
+              display: "flex",
               width: 96,
               height: 96,
               borderRadius: 24,
               background: "linear-gradient(135deg, #c62828 0%, #7f0000 100%)",
               boxShadow:
                 "0 0 48px rgba(198,40,40,0.55), 0 0 100px rgba(198,40,40,0.2)",
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginBottom: 32,
+              marginBottom: 28,
             }}
           >
             <img src={faviconSrc} width={56} height={56} />
@@ -108,78 +112,80 @@ export default function Image() {
           {/* brand label */}
           <div
             style={{
-              fontSize: 16,
+              display: "flex",
+              fontSize: 15,
               letterSpacing: "0.3em",
               textTransform: "uppercase",
               color: "#ef5350",
               fontWeight: 600,
-              marginBottom: 16,
+              marginBottom: 18,
             }}
           >
             Y. J. Electricals
           </div>
 
-          {/* headline */}
+          {/* headline row */}
           <div
             style={{
               display: "flex",
+              flexDirection: "row",
               alignItems: "center",
-              gap: 20,
-              marginBottom: 20,
+              gap: 16,
+              marginBottom: 22,
             }}
           >
             <div
               style={{
-                fontSize: 72,
+                display: "flex",
+                fontSize: 68,
                 fontWeight: 800,
                 color: "#f5f5f2",
                 lineHeight: 1.1,
-                letterSpacing: "-0.02em",
               }}
             >
-              Something{" "}
+              Something
             </div>
             <div
               style={{
-                fontSize: 72,
+                display: "flex",
+                fontSize: 68,
                 fontWeight: 800,
                 color: "#c62828",
                 lineHeight: 1.1,
-                letterSpacing: "-0.02em",
               }}
             >
               Powerful
             </div>
             <div
               style={{
-                fontSize: 72,
+                display: "flex",
+                fontSize: 68,
                 fontWeight: 800,
                 color: "#f5f5f2",
                 lineHeight: 1.1,
-                letterSpacing: "-0.02em",
               }}
             >
-              {" "}is Coming
+              is Coming
             </div>
           </div>
 
-          {/* sub */}
+          {/* tagline */}
           <div
             style={{
+              display: "flex",
               fontSize: 22,
               color: "#9ba3af",
               textAlign: "center",
-              maxWidth: 680,
-              lineHeight: 1.6,
             }}
           >
             Electrical contracting · DB panel work · Fire safety solutions
           </div>
 
-          {/* divider */}
+          {/* red divider */}
           <div
             style={{
-              marginTop: 36,
+              display: "flex",
+              marginTop: 32,
               width: 80,
               height: 3,
               borderRadius: 2,
@@ -190,7 +196,8 @@ export default function Image() {
           {/* domain */}
           <div
             style={{
-              marginTop: 20,
+              display: "flex",
+              marginTop: 18,
               fontSize: 18,
               color: "#4b5563",
               letterSpacing: "0.08em",

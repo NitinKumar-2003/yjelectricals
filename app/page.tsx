@@ -197,7 +197,7 @@ export default function ComingSoonPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          Y. J. Electricals
+          Y J Electricals.
         </motion.p>
 
         {/* headline */}
